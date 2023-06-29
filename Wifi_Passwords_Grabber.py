@@ -20,14 +20,15 @@ def get_saved_wifi_passwords():
                 break
         if password:
             passwords.append(password)
+            with open("Saved Passwords.txt", 'w') as file:
+                file.write(password)
     return passwords
 
 
 saved_wifi_passwords=get_saved_wifi_passwords()
 print(saved_wifi_passwords)
 
-with open("Saved Passwords.txt", 'w') as file:
-    file.write(saved_wifi_passwords)
+
 
 
 
